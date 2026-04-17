@@ -33,7 +33,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:3003/login",
+                "http://nova-backend-gvud.onrender.com/login",
                 { ...inputValue },
                 { withCredentials: true }
             );
@@ -48,7 +48,7 @@ const Login = () => {
                 setTimeout(() => {
                     const usernameParam = user?.username ? `?username=${user.username}` : "";
 
-                    window.location.href = `http://localhost:5174/${usernameParam}`;
+                    window.location.href = `https://nova-dashboard-ttrl.onrender.com/${usernameParam}`;
                 }, 1500);
 
             } else {
