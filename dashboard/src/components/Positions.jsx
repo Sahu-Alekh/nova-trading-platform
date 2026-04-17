@@ -8,7 +8,7 @@ export default function Positions({ username }) {
     const [allPositions, setAllPositions] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/allPosition/?username=${ username }`)
+        axios.get(`https://nova-backend-gvud.onrender.com/allPosition/?username=${ username }`)
             .then((res) => {
                 setAllPositions(res.data);
             })
