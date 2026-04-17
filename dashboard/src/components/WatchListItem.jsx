@@ -56,7 +56,7 @@ export const WatchListItemActions = ({ uid, username, Price }) => {
 
     const handleSellConfirm = async () => {
         try {
-            const response = await axios.post("http://localhost:3003/sellOrder", {
+            const response = await axios.post("https://nova-backend-gvud.onrender.com/sellOrder", {
                 username: username,
                 name: uid,
                 price: Price
