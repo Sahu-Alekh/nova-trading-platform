@@ -145,7 +145,7 @@ const RazorpayModal = ({ accountDetails, amount, username, onSuccess, onClose, o
     if (!validate()) return;
     setLoading(true);
     try {
-      await axios.post('http://localhost:3003/addFunds', { username, amount: parseFloat(amount) });
+      await axios.post('https://nova-backend-gvud.onrender.com/addFunds', { username, amount: parseFloat(amount) });
       onSuccess();
     } catch (err) {
       alert(err.response?.data || 'Payment failed');
@@ -277,14 +277,14 @@ const Funds = ({ username }) => {
 
   const fetchFunds = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:3003/userFunds?username=${username}`);
+      const res = await axios.get(`https://nova-backend-gvud.onrender.com/userFunds?username=${username}`);
       setFundData(res.data);
     } catch (err) { console.error('Error fetching funds:', err); }
   }, [username]);
 
   const fetchAccountDetails = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:3003/accountDetails?username=${username}`);
+      const res = await axios.get(`https://nova-backend-gvud.onrender.com/accountDetails?username=${username}`);
       return res.data; // expects { accountName, accountNumber, card, username }
     } catch {
       return null;
@@ -307,7 +307,7 @@ const Funds = ({ username }) => {
   const handleAccountSave = async (details) => {
     try {
       console.log(details);
-      await axios.post('http://localhost:3003/saveAccountDetails', details);
+      await axios.post('https://nova-backend-gvud.onrender.com/saveAccountDetails', details);
       setAccountDetails(details);
       setFlowStep('amount-input');
     } catch (err) {
@@ -333,7 +333,7 @@ const Funds = ({ username }) => {
     const amount = parseFloat(amountInput);
     if (isNaN(amount) || amount <= 0) return alert('Enter a valid amount');
     try {
-      await axios.post('http://localhost:3003/withdrawFunds', { username, amount });
+      await axios.post('https://nova-backend-gvud.onrender.com/withdrawFunds', { username, amount });
       alert('Funds Withdrawn Successfully!');
       setAmountInput('');
       setIsModalOpen(false);
