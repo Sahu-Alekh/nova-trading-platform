@@ -23,7 +23,7 @@ export default function Watchlist({ username }) {
         const fetchBatchPrices = async () => {
             try {
                 const symbolsParam = WATCHLIST.join(',');
-                const url = `http://localhost:3003/watchlist?symbols=${symbolsParam}`;
+                const url = `https://nova-backend-gvud.onrender.com/watchlist?symbols=${symbolsParam}`;
                 const response = await axios.get(url);
                 setPrices(response.data);
             } catch (err) {
@@ -41,7 +41,7 @@ export default function Watchlist({ username }) {
 
         try {
             // Making API call for the specific search input
-            const url = `http://localhost:3003/watchlist?symbols=${searchQuery.toUpperCase()}`;
+            const url = `https://nova-backend-gvud.onrender.com/watchlist?symbols=${searchQuery.toUpperCase()}`;
             const response = await axios.get(url);
 
             // Update the prices state with the new data
