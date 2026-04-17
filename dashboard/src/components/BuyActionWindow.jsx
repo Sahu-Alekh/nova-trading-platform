@@ -13,7 +13,7 @@ const BuyActionWindow = ({ uid, username, Price }) => {
 
     const handleBuyClick = async () => {
         try {
-            const response = await axios.post(`http://localhost:3003/newOrder/?username=${username}`, {
+            const response = await axios.post(`https://nova-backend-gvud.onrender.com/newOrder/?username=${username}`, {
                 name: uid,
                 qty: Number(stockQuantity),
                 price: Number(stockPrice),
