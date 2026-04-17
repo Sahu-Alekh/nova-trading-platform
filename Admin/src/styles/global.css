@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fb;
+}
+
+.admin-layout {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 240px; /* Matches Sidebar width */
+  width: calc(100% - 240px);
+  min-height: 100vh;
+}
+
+/* Button Global Styles */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-primary { background: #0f4c81; color: white; }
+.btn-success { background: green; color: white; }
+.btn-danger { background: red; color: white; }
+
+.loading { text-align: center; padding: 20px; font-size: 1.2rem; color: #0f4c81; }
+.error { color: red; text-align: center; padding: 10px; background: #ffe6e6; border-radius: 5px; margin-bottom: 15px;}

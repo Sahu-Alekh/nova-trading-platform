@@ -1,0 +1,51 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #333;
+  color: white;
+}
+
+/* The Hamburger Bars */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Links - Hidden on mobile by default */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #444;
+  }
+
+  .nav-links.open {
+    display: flex; /* Show links when "open" class is added */
+  }
+
+  .nav-links li {
+    padding: 15px;
+    text-align: center;
+  }
+}

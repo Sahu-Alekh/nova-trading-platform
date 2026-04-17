@@ -1,0 +1,92 @@
+/* Scoped to only this page */
+.signup_container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+/* Custom styling for the inputs that Bootstrap doesn't provide */
+.signup_container .custom-input {
+  border: 2px solid #e9ecef;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.signup_container .custom-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+  background-color: #fff;
+}
+
+/* Card hover effect */
+.signup_container .card {
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.signup_container .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Making the button feel more premium */
+.signup_container .btn-primary {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.signup_container .btn-primary:hover {
+  filter: brightness(1.1);
+  transform: scale(1.01);
+}
+
+/* Unique container to prevent global style leaks */
+.login-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card refinement */
+.login-page-wrapper .card {
+  border-radius: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Customizing Bootstrap's inputs for a cleaner look */
+.login-page-wrapper .custom-input {
+  border: 2px solid #edf2f7;
+  border-radius: 0.5rem;
+  background-color: #f8fafc;
+}
+
+.login-page-wrapper .custom-input:focus {
+  background-color: #fff;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+  outline: none;
+}
+
+/* Button hover effects */
+.login-page-wrapper .btn-primary {
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.login-page-wrapper .btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+/* Link styling */
+.login-page-wrapper a {
+  color: #0d6efd;
+  transition: color 0.2s;
+}
+
+.login-page-wrapper a:hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}

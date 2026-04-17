@@ -1,0 +1,45 @@
+.Demo {
+    padding-right: 60px;
+}
+
+.Play {
+    padding-right: 20px;
+}
+
+.Hero-Border {
+    border-bottom: 0.01px solid #eee;
+    width: 70%;
+}
+
+.Right-Col {
+    padding-left: 120px !important;
+}
+
+.RigthtText {
+    padding-top: 12rem;
+    padding-left: 5rem;
+}
+
+
+/* universeSection */
+
+.universLogo {
+    margin-top: 35px;
+    text-align: center;
+    color: #9b9b9b;
+}
+
+.universLogo img{
+    max-width: 100%;
+    height: 40px;
+    /* margin-left: 95px; */
+}
+
+.universLogo p {
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.universeBg {
+    padding: 0 182px;
+}

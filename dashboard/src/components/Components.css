@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.topbar-contener {
+  height: 80px;
+  width: 100%;
+  border-bottom: 2px solid #efefef;
+  display: flex;
+}
+
+.topbar-left {
+  width: 30%;
+  border-right: 2px solid #efefef;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nifty,
+.Sensex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nifty p,
+.Sensex p {
+  margin: 30px 10px;
+  font-size: 12px;
+}
+
+.Red {
+  color: red;
+}
+
+/* topbar menu */
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-img {
+  height: 29px;
+  width: 29px;
+  margin: 25px 15px;
+}
+
+.menu-items ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 26rem;
+  margin-top: 1.5rem;
+}
+
+.menu-items p {
+  margin: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-items ul {
+  list-style-type: none;
+  color: black;
+}
+
+.menu-items p:hover {
+  color: rgb(197, 162, 98);
+  font-weight: 600;
+}
+
+.Apps {
+  padding-right: 0.5rem;
+  border-right: 1px solid #998c8c;
+}
+
+.menu {
+  color: #323131;
+}
+
+.menu-active {
+  color: rgb(197, 162, 98);
+  font-weight: 600
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #323131;
+  cursor: pointer;
+  border-left: 2px solid #b7b5b5;
+  margin-top: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+.Avatar {
+  height: 29px;
+  width: 29px;
+  background-color: aqua;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 29px;
+  color: black;
+}
+
+.profile button {
+  margin-left: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #323131;
+  background-color: rgb(112, 112, 211);
+  color: #323131;
+  margin-bottom: 0.8rem;
+}
+
+.Dark-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-left: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Dashboard stayle */
+
+.dashboard {
+  display: flex;
+  height: 100%;
+}
+
+.dashboard-watchlist {
+  height: 87vh;
+  width: 42%;
+  border-right: 2px solid #efefef;
+}
+
+.content {
+  width: 100%;
+}
+
+/* Summary Styling */
+
+.Summary {
+  margin: 2rem;
+  width: 100%;
+  padding-right: 6rem;
+}
+
+.Summary h2 {
+  font-size: 21px;
+  font-weight: 500;
+  color: #545151;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #efefef;
+}
+
+.summary-equity {
+  padding: 3rem 0;
+  border-bottom: 2px solid #efefef;
+}
+
+.Summary-equity-amount {
+  padding-left: 6rem;
+  border-right: 1px solid #998c8c;
+}
+
+.cont {
+  gap: 1rem;
+}
+
+.cont i {
+  color: #323131;
+}
+
+/* Holding CSS */
+
+.Holding {
+  margin: 2rem;
+  width: 95%;
+  padding-right: 6rem;
+}
+
+.Holding h2 {
+  font-size: 21px;
+  font-weight: 500;
+  color: #545151;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #efefef;
+}
+
+.order-table {
+  overflow-x: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  min-width: 800px;
+  /* Ensures table doesn't squash on small screens */
+}
+
+/* Color indicators for profit and loss */
+.profit {
+  color: #4caf50;
+  /* Green */
+}
+
+.loss {
+  color: #f44336;
+  /* Red */
+}
+
+/* Optional: Add a '+' or '-' prefix via CSS if you don't do it in JS */
+.profit::before {
+  content: '+';
+}
+
+/* Base table styling for the mapping results */
+.order-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  /* Keeps numbers aligned vertically */
+}
+
+.order-table tr {
+  border-bottom: 1px solid #eee;
+}
+
+.order-table td {
+  padding: 12px;
+  font-size: 12px;
+  text-align: right;
+  /* Standard for financial data */
+}
+
+/* Keep the stock name left-aligned */
+.order-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Hover state for better row tracking */
+.order-table tr:hover {
+  background-color: #f8faff;
+}
+
+/* Header Styling */
+th {
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  text-align: right;
+  /* Financial data is easier to read right-aligned */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* First column (Instrument) should stay left-aligned */
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+/* Cell Styling */
+td {
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: right;
+}
+
+/* Zebra striping and hover effect */
+tr:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+tr:hover {
+  background-color: #f5f7ff;
+  transition: background-color 0.2s ease;
+}
+
+/* Positions CSS */
+
+.Position {
+  margin: 2rem;
+  width: 100%;
+  padding-right: 6rem;
+}
+
+.Position h2 {
+  font-size: 21px;
+  font-weight: 500;
+  color: #545151;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #efefef;
+}
+
+/* watchlist style */
+
+.search-container {
+  display: flex;
+}
+
+.search-container input {
+  border: 0;
+  border-bottom: 2px solid #efefef;
+  width: 100%;
+  padding: 0.2rem;
+}
+
+.search-container span {
+  display: inline;
+  border-bottom: 2px solid #efefef;
+  color: #7c7c7c;
+  margin-top: 0.2rem;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+  margin-left: -2.5rem;
+  color: #7c7c7c;
+}
+
+.list li {
+  list-style: none;
+  padding: 10px 10px;
+  border-bottom: 1px solid #eee;
+  /* Optional: for list separation */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.list li:hover {
+  background-color: #f9f9f9;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.item p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: #444;
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.price {
+  color: #666;
+  margin-left: 2px;
+}
+
+.up {
+  color: #4caf50 !important;
+  /* Material Green */
+}
+
+.down {
+  color: #f44336 !important;
+  /* Material Red */
+}
+
+.svg.up,
+svg.down {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* watchListItem CSS */
+
+/* Container for the buttons */
+.actions {
+  display: inline-flex;
+  align-items: end;
+  gap: 8px;
+  /* Space between buttons */
+  padding: 10px 0;
+  margin-left: 8rem;
+}
+
+/* Base button styles */
+.actions button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+}
+
+/* Buy Button (Green) */
+.buy {
+  background-color: #4caf50;
+  color: white;
+}
+
+.buy:hover {
+  background-color: #43a047;
+}
+
+/* Sell Button (Red) */
+.sell {
+  background-color: #f44336;
+  color: white;
+}
+
+.sell:hover {
+  background-color: #e53935;
+}
+
+/* Icon Buttons (Analytics & More) */
+.action {
+  background-color: transparent;
+  color: #5f6368;
+  /* Subtle grey */
+  padding: 4px !important;
+}
+
+.action:hover {
+  background-color: #f1f3f4;
+  color: #202124;
+}
+
+/* Specific Icon Styling (Material UI Icons) */
+.analytics,
+.more {
+  font-size: 20px !important;
+}
+
+/* Optional: Adding a bit of margin to the inner span if needed */
+.actions>span {
+  display: flex;
+  gap: 6px;
+}

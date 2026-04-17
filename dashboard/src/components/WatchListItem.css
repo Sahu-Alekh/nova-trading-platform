@@ -1,0 +1,59 @@
+/* Container for each stock item */
+.list li {
+  list-style: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee; /* Optional: for list separation */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover state mentioned in your React handlers */
+li:hover {
+  background-color: #f9f9f9;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+/* Stock Name Styling */
+.item p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Information Row (Percent, Icon, Price) */
+.itemInfo {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.price {
+  color: #666;
+  margin-left: 2px;
+}
+
+/* --- Dynamic Coloring --- */
+
+/* Green for Upward Trends */
+.up {
+  color: #4caf50 !important; /* Material Green */
+}
+
+/* Red for Downward Trends */
+.down {
+  color: #f44336 !important; /* Material Red */
+}
+
+/* Icon specific sizing if using Material-UI icons */
+svg.up, svg.down {
+  font-size: 16px;
+  vertical-align: middle;
+}

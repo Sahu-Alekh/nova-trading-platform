@@ -1,0 +1,111 @@
+/* Container as a centered Popup */
+#buy-window.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  font-family: "Inter", -apple-system, sans-serif;
+  overflow: hidden;
+  border-top: 6px solid #4184f3; /* Trading Blue */
+}
+
+/* Form Sections */
+.regular-order {
+  padding: 20px;
+}
+
+.inputs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0 10px 5px 10px;
+  flex: 1;
+}
+
+legend {
+  font-size: 12px;
+  color: #8c8c8c;
+  padding: 0 5px;
+}
+
+input {
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  padding: 5px 0;
+  color: #444;
+}
+
+/* Bottom Actions Section */
+.buttons {
+  background-color: #fbfbfb;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+
+.buttons span {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Button Styling */
+.btn {
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-blue {
+  background-color: #4184f3;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn-grey {
+  background-color: #eee;
+  color: #444;
+}
+
+/* Draggable Cursor */
+#buy-window[draggable="true"] {
+  cursor: grab;
+}
+
+#buy-window[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999; /* Just below the window */
+}

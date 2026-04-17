@@ -1,0 +1,292 @@
+:root {
+  --blue: #387ed1;
+  --green: #4caf50;
+  --text-grey: #9b9b9b;
+  --border-light: #eee;
+  --dark-text: #444;
+
+  /* Razorpay theme */
+  --rzp-blue: #2d6fe3;
+  --rzp-dark: #1a1a2e;
+  --rzp-mid: #16213e;
+  --rzp-accent: #0f3460;
+  --rzp-teal: #00b4d8;
+  --rzp-surface: #ffffff;
+  --rzp-text: #2d2d2d;
+  --rzp-muted: #6b7280;
+  --rzp-border: #e5e7eb;
+  --rzp-radius: 12px;
+}
+
+/* ── Base ── */
+.funds-container {
+  padding: 30px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--dark-text);
+  max-width: 1000px;
+}
+
+.funds-header { border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
+
+.tabs button {
+  background: none; border: none; padding: 10px 20px;
+  cursor: pointer; font-size: 14px; color: var(--text-grey);
+  border-bottom: 2px solid transparent;
+}
+.tabs button.active { color: var(--blue); border-bottom: 2px solid var(--blue); font-weight: 500; }
+
+.funds-content { display: flex; gap: 60px; }
+.funds-left { flex: 1.5; }
+.margin-summary { display: flex; flex-direction: column; gap: 25px; }
+.label { color: var(--text-grey); font-size: 13px; display: block; margin-bottom: 5px; }
+.value { font-size: 32px; font-weight: 400; margin: 0; }
+.value.green { color: var(--green); }
+.action-buttons { margin-top: 40px; display: flex; gap: 15px; }
+
+.btn { padding: 12px 25px; border-radius: 3px; font-size: 14px; font-weight: 500; cursor: pointer; border: 1px solid var(--blue); transition: opacity 0.15s; }
+.btn:hover { opacity: 0.85; }
+.btn-blue { background-color: var(--blue); color: white; }
+.btn-white { background-color: white; color: var(--blue); }
+
+.funds-right { flex: 1; border-left: 1px solid var(--border-light); padding-left: 40px; }
+.detail-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f8f8f8; font-size: 14px; }
+.detail-value { font-weight: 500; }
+
+/* ── Old modal (withdraw) ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center; z-index: 1000;
+}
+.modal-content {
+  background: white; padding: 30px; border-radius: 8px;
+  width: 350px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.modal-content input {
+  width: 100%; padding: 10px; margin: 20px 0;
+  border: 1px solid #ddd; border-radius: 4px; font-size: 16px; box-sizing: border-box;
+}
+.modal-actions { display: flex; gap: 10px; justify-content: center; }
+
+/* ══════════════════════════════════════════
+   RAZORPAY-STYLE MODAL SYSTEM
+══════════════════════════════════════════ */
+
+.rzp-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(10, 10, 30, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2000;
+  animation: rzpFadeIn 0.2s ease;
+}
+
+@keyframes rzpFadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes rzpSlideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Generic modal card ── */
+.rzp-modal {
+  background: var(--rzp-surface);
+  border-radius: var(--rzp-radius);
+  width: 420px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+  animation: rzpSlideUp 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.rzp-modal-header {
+  background: linear-gradient(135deg, var(--rzp-dark) 0%, var(--rzp-accent) 100%);
+  padding: 24px 28px 20px;
+  color: white;
+}
+
+.rzp-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 17px; font-weight: 600; margin-bottom: 6px;
+}
+.rzp-logo-icon { font-size: 22px; }
+.rzp-subtitle { color: rgba(255,255,255,0.65); font-size: 13px; margin: 0; }
+
+.rzp-modal-body { padding: 24px 28px; }
+.rzp-modal-footer { padding: 0 28px 24px; }
+.rzp-footer-row { display: flex; gap: 12px; }
+
+/* ── Fields ── */
+.rzp-field { display: flex; flex-direction: column; margin-bottom: 16px; }
+.rzp-field label {
+  font-size: 12px; font-weight: 600; color: var(--rzp-muted);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;
+}
+.rzp-field input {
+  padding: 11px 14px;
+  border: 1.5px solid var(--rzp-border);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--rzp-text);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.rzp-field input:focus {
+  border-color: var(--rzp-blue);
+  box-shadow: 0 0 0 3px rgba(45,111,227,0.12);
+}
+.rzp-error { color: #ef4444; font-size: 11.5px; margin-top: 4px; }
+
+/* ── Card type toggle ── */
+.rzp-card-type-group { display: flex; gap: 10px; }
+.rzp-card-type-btn {
+  flex: 1; padding: 10px 8px; border-radius: 8px;
+  border: 1.5px solid var(--rzp-border);
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  background: white; color: var(--rzp-muted);
+  transition: all 0.15s;
+}
+.rzp-card-type-btn.active {
+  border-color: var(--rzp-blue); background: rgba(45,111,227,0.07);
+  color: var(--rzp-blue); font-weight: 600;
+}
+.rzp-card-type-btn:hover:not(.active) { border-color: #c0c8d4; }
+
+/* ── Pay button ── */
+.rzp-pay-btn {
+  width: 100%; padding: 14px;
+  background: linear-gradient(135deg, #2d6fe3 0%, #1a4fad 100%);
+  color: white; border: none; border-radius: 8px;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+.rzp-pay-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+.rzp-pay-btn:active { transform: translateY(0); }
+.rzp-pay-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.rzp-cancel-btn {
+  flex: 1; padding: 14px;
+  background: white; color: var(--rzp-muted);
+  border: 1.5px solid var(--rzp-border); border-radius: 8px;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: all 0.15s;
+}
+.rzp-cancel-btn:hover { border-color: #aab; color: var(--rzp-text); }
+
+/* ── Quick amounts ── */
+.rzp-quick-amounts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: -4px; }
+.rzp-quick-btn {
+  padding: 7px 14px; border-radius: 20px;
+  border: 1.5px solid var(--rzp-border);
+  background: white; color: var(--rzp-blue);
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  transition: all 0.15s;
+}
+.rzp-quick-btn:hover { background: rgba(45,111,227,0.07); border-color: var(--rzp-blue); }
+
+/* ═══════════════════════════════════════
+   SPLIT RAZORPAY PAYMENT MODAL
+═══════════════════════════════════════ */
+.rzp-payment-modal {
+  width: 680px;
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--rzp-radius);
+  overflow: hidden;
+}
+
+/* Left dark panel */
+.rzp-left-panel {
+  width: 240px;
+  background: linear-gradient(160deg, var(--rzp-dark) 0%, var(--rzp-accent) 100%);
+  padding: 32px 24px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  color: white;
+  flex-shrink: 0;
+}
+.rzp-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+.rzp-brand-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--rzp-teal), var(--rzp-blue));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700; color: white;
+}
+.rzp-brand-name { font-size: 15px; font-weight: 700; }
+.rzp-brand-sub { font-size: 11px; color: rgba(255,255,255,0.55); }
+
+.rzp-amount-display { margin-top: auto; }
+.rzp-amount-label { font-size: 11px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 6px; }
+.rzp-amount-value { font-size: 28px; font-weight: 700; color: white; }
+
+.rzp-secure-badge {
+  margin-top: 32px;
+  font-size: 11.5px; color: rgba(255,255,255,0.5);
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* Right white panel */
+.rzp-right-panel {
+  flex: 1; padding: 28px; display: flex; flex-direction: column;
+  overflow-y: auto; max-height: 540px;
+}
+
+.rzp-right-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+}
+.rzp-right-header h3 { margin: 0; font-size: 16px; font-weight: 600; color: var(--rzp-text); }
+.rzp-close-btn {
+  background: none; border: none; font-size: 16px; cursor: pointer;
+  color: var(--rzp-muted); line-height: 1; padding: 4px;
+  border-radius: 4px; transition: background 0.15s;
+}
+.rzp-close-btn:hover { background: #f3f4f6; color: var(--rzp-text); }
+
+/* Saved card */
+.rzp-saved-card {
+  background: #f8faff; border: 1.5px solid #dde8ff;
+  border-radius: 10px; padding: 14px 16px;
+  margin-bottom: 18px;
+}
+.rzp-saved-card-info { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.rzp-card-chip { font-size: 28px; }
+.rzp-card-num { font-size: 14px; font-weight: 600; color: var(--rzp-text); font-family: 'Courier New', monospace; letter-spacing: 0.05em; }
+.rzp-card-holder { font-size: 12px; color: var(--rzp-muted); margin-top: 2px; text-transform: capitalize; }
+
+.rzp-link-btn {
+  background: none; border: none; color: var(--rzp-blue);
+  font-size: 12.5px; font-weight: 600; cursor: pointer; padding: 0;
+  transition: opacity 0.15s;
+}
+.rzp-link-btn:hover { opacity: 0.75; }
+
+/* New card form */
+.rzp-new-card-form {
+  background: #fafafa; border: 1.5px solid var(--rzp-border);
+  border-radius: 10px; padding: 16px; margin-bottom: 16px;
+}
+.rzp-new-card-form .rzp-field { margin-bottom: 12px; }
+
+/* Expiry + CVV row */
+.rzp-row-2 { display: flex; gap: 16px; margin-bottom: 20px; }
+.rzp-row-2 .rzp-field { flex: 1; margin-bottom: 0; }
+
+/* Amount modal specific */
+.rzp-amount-modal .rzp-field input {
+  font-size: 24px; font-weight: 300; text-align: center;
+  padding: 16px;
+}
+
+.rzp-disclaimer {
+  font-size: 11px; color: var(--rzp-muted); text-align: center;
+  margin-top: 12px; line-height: 1.5;
+}
+.rzp-disclaimer a { color: var(--rzp-blue); text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 680px) {
+  .rzp-payment-modal { flex-direction: column; width: 95vw; }
+  .rzp-left-panel { width: auto; padding: 20px; flex-direction: row; align-items: center; }
+  .rzp-amount-display { margin-top: 0; }
+  .rzp-secure-badge { display: none; }
+}
