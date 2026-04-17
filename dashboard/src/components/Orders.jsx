@@ -20,7 +20,7 @@ export default function Orders({ username }) {
     useEffect(() => {
         if (username) {
             axios
-                .get(`http://localhost:3003/getSellOrders?username=${username}`)
+                .get(`https://nova-backend-gvud.onrender.com/getSellOrders?username=${username}`)
                 .then((res) => {
                     setSellOrders(res.data);
                 })
