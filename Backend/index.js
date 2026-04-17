@@ -24,7 +24,7 @@ app.use(
         origin: [
             "http://localhost:3000", 
             "http://localhost:5173", 
-            "https://nova-frontend-ypo7.onrender.com", 
+            "https://nova-frontend-opym.onrender.com", 
             "https://nova-dashboard-ttrl.onrender.com"
         ],
         methods: ["GET", "POST", "PUT", "DELETE"],
