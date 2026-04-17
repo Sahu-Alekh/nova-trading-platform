@@ -13,7 +13,7 @@ export default function Summary({ username }) {
     useEffect(() => {
         const fetchFunds = async () => {
             try {
-                const response = await axios.get(`http://localhost:3003/userFunds?username=${username}`);
+                const response = await axios.get(`https://nova-backend-gvud.onrender.com/userFunds?username=${username}`);
                 setFundData(response.data);
             } catch (err) {
                 console.error("Error fetching summary funds:", err);
