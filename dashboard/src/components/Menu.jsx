@@ -34,7 +34,7 @@ export default function Menu({ username }) {
 
     const Logout = () => {
         removeCookie("token");
-        window.location.href = "https://nova-frontend-opym.onrender.com/login";
+        window.location.href = "https://nova-frontend-opym.onrender.com";
     };
 
     return (
