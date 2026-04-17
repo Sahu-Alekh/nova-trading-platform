@@ -16,7 +16,7 @@ export default function Navbar() {
                 <Link className="navbar-brand" to="/">
                     {/* 1. Width increased to 250px, Height remains 70px */}
                     <img
-                        src="/images/logo.png"
+                        src="/images/Logo.png"
                         style={{ width: "250px", height: "70px", objectFit: "contain" }}
                         alt=""
                     />
