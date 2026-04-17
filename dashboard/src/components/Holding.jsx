@@ -8,7 +8,7 @@ export default function Holding({ username }) {
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/allHolding?username=${username}`)
+        axios.get(`https://nova-backend-gvud.onrender.com/allHolding?username=${username}`)
             .then((res) => {
                 setAllHoldings(res.data);
             })
