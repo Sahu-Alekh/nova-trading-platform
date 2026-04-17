@@ -41,7 +41,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3003/signup",
+        "https://nova-backend-gvud.onrender.com/signup",
         inputValue,
         { withCredentials: true }
       );
