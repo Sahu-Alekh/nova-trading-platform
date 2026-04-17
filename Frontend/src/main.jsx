@@ -14,8 +14,6 @@ import Navbar from './landing_page/Navbar'
 import Footer from './landing_page/Footer'
 import Login from './landing_page/singup/Login';
 
-import Dashboard from '../../dashboard/src/components/Dashboard';
-
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -26,7 +24,6 @@ createRoot(document.getElementById('root')).render(
       {/* 2. Routes container only holds Route items */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/products" element={<ProductsPage />} />
